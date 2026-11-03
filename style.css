@@ -1,0 +1,64 @@
+
+/* JOIN THE WOLF PACK */
+
+.join-button {
+  display: block;
+  margin: 0 16px 20px;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  background: linear-gradient(
+    100deg,
+    #7135a0,
+    #a855f7,
+    #7135a0
+  );
+
+  background-size: 200% auto;
+  border: 1px solid #d8b4fe;
+  border-radius: 10px;
+
+  box-shadow: 0 0 15px #a855f766;
+
+  animation: joinGlow 3s infinite alternate;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.join-button span {
+  display: block;
+  font-size: 10px;
+  font-weight: normal;
+  margin-top: 6px;
+  color: #f0dcff;
+}
+
+.join-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #c084fc;
+}
+
+.join-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+@keyframes joinGlow {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 100% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .join-button {
+    animation: none;
+    transition: none;
+  }
+}
