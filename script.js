@@ -1,38 +1,53 @@
-// 🐺 LOONA WOLF MEMBER COUNTER
 
+/* 🐺 LOONA WOLF - MEMBER MILESTONES */
+
+// Current Wolf Pack members
 const memberCount = 19;
 
 // Membership milestones
-const milestones = [
-  25,
-  50,
-  100,
-  250,
-  500,
-  1000
-];
+const milestones = [25, 50, 100, 250, 500, 1000];
 
-// Display current members
-document.getElementById("member-count").textContent =
-  memberCount;
+// Get website elements
+const counter = document.getElementById("member-count");
+const nextText = document.getElementById("next-milestone");
+const progressBar = document.getElementById("milestone-progress");
+
+// Display member count
+if (counter) {
+  counter.textContent = memberCount;
+}
 
 // Find next milestone
 const nextMilestone = milestones.find(
   milestone => memberCount < milestone
 );
 
-document.getElementById("next-milestone").textContent =
-  nextMilestone
-    ? `${nextMilestone} members — Next milestone! 🐺`
-    : "All milestones achieved! 💜";
+if (nextMilestone) {
+  const previousMilestone =
+    [...milestones].reverse().find(
+      milestone => memberCount >= milestone
+    ) || 0;
 
-// Update progress bar
-const previousMilestone =
-  [...milestones].reverse().find(m => memberCount >= m) || 0;
+  const progress =
+    ((memberCount - previousMilestone) /
+    (nextMilestone - previousMilestone)) * 100;
 
-const progress =
-  ((memberCount - previousMilestone) /
-  (nextMilestone - previousMilestone)) * 100;
+  if (nextText) {
+    nextText.textContent =
+      `${nextMilestone} members — Next milestone! 🐺`;
+  }
 
-document.getElementById("milestone-progress").style.width =
-  `${progress}%`;
+  if (progressBar) {
+    progressBar.style.width = `${progress}%`;
+  }
+
+} else {
+  if (nextText) {
+    nextText.textContent =
+      "All milestones achieved! 🐺💜";
+  }
+
+  if (progressBar) {
+    progressBar.style.width = "100%";
+  }
+}
