@@ -1,9 +1,111 @@
 
-/* JOIN THE WOLF PACK */
+/* 🐺 LOONA WOLF - PURPLE THEME */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #10091a;
+  color: #ffffff;
+}
+
+header {
+  text-align: center;
+  padding: 35px 15px;
+  background: linear-gradient(120deg, #32104e, #7135a0);
+  box-shadow: 0 0 20px #a855f766;
+}
+
+header h1 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin: 0 0 10px;
+}
+
+header p {
+  color: #e9d5ff;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+.sidebar {
+  width: 270px;
+  min-width: 250px;
+  padding: 20px;
+  background: #21112f;
+  border: 1px solid #7135a0;
+  border-radius: 14px;
+  box-shadow: 0 0 15px #a855f733;
+}
+
+.sidebar h2,
+.content h2 {
+  color: #d8b4fe;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 25px;
+  background: #1b1026;
+  border: 1px solid #492466;
+  border-radius: 14px;
+}
+
+.members {
+  text-align: center;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  background: #301747;
+  border-radius: 12px;
+}
+
+.members h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #e9d5ff;
+}
+
+#member-count {
+  font-size: 42px;
+  font-weight: bold;
+  color: #c084fc;
+  margin: 12px 0;
+  text-shadow: 0 0 15px #a855f7;
+}
+
+#next-milestone {
+  font-size: 12px;
+  color: #e9d5ff;
+}
+
+.milestone-track {
+  height: 10px;
+  width: 100%;
+  background: #160c20;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#milestone-progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #7135a0, #d8b4fe);
+  transition: width 0.5s ease;
+}
 
 .join-button {
   display: block;
-  margin: 0 16px 20px;
+  margin: 0 0 20px;
   padding: 15px;
   text-align: center;
   text-decoration: none;
@@ -11,22 +113,13 @@
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 1px;
-
-  background: linear-gradient(
-    100deg,
-    #7135a0,
-    #a855f7,
-    #7135a0
-  );
-
+  background: linear-gradient(100deg, #7135a0, #a855f7, #7135a0);
   background-size: 200% auto;
   border: 1px solid #d8b4fe;
   border-radius: 10px;
-
   box-shadow: 0 0 15px #a855f766;
-
   animation: joinGlow 3s infinite alternate;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.3s;
 }
 
 .join-button span {
@@ -42,17 +135,38 @@
   box-shadow: 0 0 25px #c084fc;
 }
 
-.join-button:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 4px;
+@keyframes joinGlow {
+  from { background-position: 0% center; }
+  to { background-position: 100% center; }
 }
 
-@keyframes joinGlow {
-  from {
-    background-position: 0% center;
+.content iframe {
+  border: 1px solid #7135a0;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #c4a5df;
+}
+
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
   }
-  to {
-    background-position: 100% center;
+
+  .sidebar {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  .content {
+    padding: 15px;
   }
 }
 
